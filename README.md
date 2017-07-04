@@ -9,6 +9,14 @@ Tested Environments:
 
 Ubuntu Bash on Windows 10
 
+Demo Videos:
+
+QR Watermarked Video
+https://youtu.be/PVnmKUC1VXM
+
+Extracted QR Watermark Video
+https://youtu.be/j6TqY0JIaMo
+
 Use Case:
 
 This is designed for people wanting to protect video content exposed on a website or other online media provider where they want to be able to identify the person/entity that downloaded the content while making it obvious to the downloader that the content is tracked. To facilitate this an information payload is encoded in a QR code which moves around the video to make it resistant to cropping and filters normally used to remove stationary watermarks. To be as generic as possible the payload for the qr code is just a string.
