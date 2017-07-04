@@ -26,14 +26,14 @@ rand_between(){
 
 gen_qrcode_frames(){
 	LENGTH=$1
-	USERNAME=$2
+	PAYLOAD=$2
 	TIMESTAMP=$3
-	echo "Generating $LENGTH QR Code Frames..."
+	echo "Generating $LENGTH QR Code Frames with playload \"$PAYLOAD\"..."
 	for i in $(seq -f "%08g" 0 $LENGTH)
 	do
 		ALPHA=$(rand_between $MIN_ALPHA $MAX_ALPHA)
 		ALPHA_HEX=$(printf "%x" $ALPHA)
-		DATA="$USERNAME - $TIMESTAMP - $i"
+		DATA="$PAYLOAD - $TIMESTAMP - $i"
 		DATA=$(echo "$DATA" | md5sum)$DATA
 		qrencode -s 4 -m 0 -o "$ID$i$QRBASE_FRAME_FNAME" "$DATA" --background=FFFFFF00 --foreground=$(printf "%08x" $ALPHA)
 	done
@@ -100,7 +100,8 @@ gen_video(){
 	echo "Done."
 }
 
-gen_qrcode_frames $(get_durration $1) $2 "$(date)"
+echo $2
+gen_qrcode_frames $(get_durration $1) "$2" "$(date)"
 gen_video $1
 blend_video $1
 rm cmd.txt
