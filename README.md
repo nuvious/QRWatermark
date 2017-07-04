@@ -12,10 +12,10 @@ Ubuntu Bash on Windows 10
 Demo Videos:
 
 QR Watermarked Video
-https://youtu.be/PVnmKUC1VXM
+https://youtu.be/aOVnH15Npao
 
 Extracted QR Watermark Video
-https://youtu.be/j6TqY0JIaMo
+https://youtu.be/ETBfQPdyNZ0
 
 Use Case:
 
