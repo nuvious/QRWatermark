@@ -1,0 +1,1 @@
+ffmpeg -y -i $1 -i $2 -filter_complex '[1:v][0:v]blend=all_mode=difference[out];[out]eq=saturation=0:brightness=0.4[out];[out]eq=contrast=-2[out];[out]eq=contrast=2[out];[out]eq=contrast=2[out]' -map [out] $1.diff.mp4
